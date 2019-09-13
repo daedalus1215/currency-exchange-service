@@ -10,9 +10,11 @@ import java.math.BigDecimal;
 @RestController
 public class CurrencyExchangeController {
     private Environment environment;
+    private ExchangeValueRepository exchangeValueRepository;
 
-    public CurrencyExchangeController(Environment environment) {
+    public CurrencyExchangeController(Environment environment, ExchangeValueRepository exchangeValueRepository) {
         this.environment = environment;
+        this.exchangeValueRepository = exchangeValueRepository;
     }
 
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
